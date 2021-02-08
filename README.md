@@ -6,3 +6,4 @@
 - User Count channel
 - Mute command with database storing muted users
 - Automatic expire function to remove users from muted role
+- Basic MongoDb handling with no function yet
