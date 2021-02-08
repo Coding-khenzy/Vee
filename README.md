@@ -10,7 +10,7 @@
 ![Alt Text](https://cdn.discordapp.com/attachments/808474262733586443/808483957338931220/unknown.png)
 - Dynamically updating whenever there is a new user or one gets removed
 #### Mute command with database storing muted users
-syntax: ve?mute @user [duration] [durationType]
+syntax: ve?mute @user [duration] [durationType] (DurationTypes: m - minute, h - hours, life - -1)
 #### Automatic expire function to remove users from muted role
 - Muted users expire over set durationTime
 #### Basic MongoDb handling with no function yet
