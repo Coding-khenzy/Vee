@@ -10,7 +10,9 @@ const verify = require('./commands/verify.js')
 const fs = require('fs');
 const firstMessage = require('./commands/firstMessage');
 const roleClaim = require('./commands/role-claim');
-
+const mongo = require('./commands/mongo.js');
+const mute = require('./commands/mute');
+const levels = require('./commands/levels')
 
 client.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'))
@@ -24,12 +26,23 @@ for (const file of commandFiles) {
 require('dotenv').config();
 
 
-client.on('ready', () => {
+client.on('ready', async () => {
     console.log(`${client.user.username} is ready.`);
-    memberCount(client);
 
+    memberCount(client);
+    mute(client);
     roleClaim(client);
     verify(client);
+    levels(client);
+
+
+    await mongo().then(mongoose => {
+        try {
+            console.log('Connected to Database!')
+        } finally {
+            mongoose.connection.close()
+        }
+    });
 });
 
 

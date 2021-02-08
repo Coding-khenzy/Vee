@@ -1,3 +1,5 @@
 {
-    "prefix": "ve?"
+    "prefix": "ve?",
+    "mongoPath": "mongodb://localhost:27017",
+    "redisPath": "//redis-19922.c242.eu-west-1-2.ec2.cloud.redislabs.com:19922?password=486oYKoTLyzD02taBznm97Ga8VGZdpDM"
 }
